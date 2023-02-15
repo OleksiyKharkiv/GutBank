@@ -1,13 +1,12 @@
-package com.example.gutbank.model;
+package com.example.gutbank.entity;
 
 import java.util.Date;
 
-public class Manager {
+public class AccountProdukt {
     private int id;
-    private String firstName;
-    private String lastName;
+    private String accountId;
+    private int productId;
     private int status;
     private Date createdAt;
     private Date updatedAt;
-
 }

@@ -1,4 +1,4 @@
-package com.example.gutbank.model;
+package com.example.gutbank.entity;
 
 import java.math.BigDecimal;
 import java.sql.Date;
