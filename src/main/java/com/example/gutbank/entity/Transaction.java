@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -40,9 +41,15 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private int type;
-
+    @Column(name = "amount")
     private BigDecimal amount;
+    @Column(name = "description")
     private String description;
-    private Date createdAt;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
+
+
+
+
 
 }

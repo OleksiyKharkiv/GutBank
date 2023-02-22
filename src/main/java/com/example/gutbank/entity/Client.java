@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -54,9 +55,9 @@ public class Client {
     @Column(name = "ph[ne")
     private String phone;
     @Column(name = "creates_at")
-    private int createdAt;
+    private Timestamp createdAt;
     @Column(name = "updated_at")
-    private int updatedAt;
+    private Timestamp updatedAt;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private Set<Account> account = new HashSet<>();

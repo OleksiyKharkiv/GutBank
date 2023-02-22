@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Timestamp;
 import java.util.Set;
 
 @Getter
@@ -48,9 +49,9 @@ public class Account {
     @Column(name = "currency_code")
     private Currencies currencyCode;
     @Column(name = "created_at")
-    private int createdAt;
+    private Timestamp createdAt;
     @Column(name = "updated_at")
-    private int updatedAt;
+    private Timestamp updatedAt;
 
     @ManyToOne()
     @JoinColumn(name = "client_id", referencedColumnName = "id")
