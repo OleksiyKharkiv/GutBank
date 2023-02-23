@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -48,8 +49,29 @@ public class Transaction {
     @Column(name = "created_at")
     private Timestamp createdAt;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transaction that = (Transaction) o;
+        return createdAt == that.createdAt && Objects.equals(debitAccountId, that.debitAccountId) && Objects.equals(creditAccountId, that.creditAccountId);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(createdAt, debitAccountId, creditAccountId);
+    }
 
-
-
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id='" + id + '\'' +
+                ", type=" + type +
+                ", amount=" + amount +
+                ", description='" + description + '\'' +
+                ", createdAt=" + createdAt +
+                ", debitAccountId=" + debitAccountId +
+                ", creditAccountId=" + creditAccountId +
+                '}';
+    }
 }

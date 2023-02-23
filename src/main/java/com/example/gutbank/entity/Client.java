@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -61,4 +62,33 @@ public class Client {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private Set<Account> account = new HashSet<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return taxCode.equals(client.taxCode) && email.equals(client.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(taxCode, email);
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id='" + id + '\'' +
+                ", status=" + status +
+                ", taxCode='" + taxCode + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="insert test data into exchange_rates table 1" author="y.valadzko">
+        <insert tableName="exchange_rates">
+            <column name="id" value="11111111-2222-3333-aabb-cccdddfff666"/>
+            <column name="updated_at" value="2022-06-14 9:00:40"/>
+            <column name="currency_code" value="RUB"/>
+            <column name="iso_code" value="643"/>
+            <column name="name" value="Russian_Ruble"/>
+            <column name="sign" value="₽"/>
+            <column name="unit" value="100"/>
+            <column name="buying_rate" value="1.42"/>
+            <column name="selling_rate" value="1.45"/>
+            <column name="is_cross" value="true"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert test data into exchange_rates table 2" author="y.valadzko">
+        <insert tableName="exchange_rates">
+            <column name="id" value="11114444-2222-3333-aabb-cccdddfff666"/>
+            <column name="updated_at" value="2022-06-13 9:11:00"/>
+            <column name="currency_code" value="USD"/>
+            <column name="iso_code" value="840"/>
+            <column name="name" value="US_Dollar"/>
+            <column name="sign" value="$"/>
+            <column name="unit" value="1"/>
+            <column name="buying_rate" value="0.80"/>
+            <column name="selling_rate" value="0.84"/>
+            <column name="is_cross" value="false"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert test data into exchange_rates table 3" author="y.valadzko">
+        <insert tableName="exchange_rates">
+            <column name="id" value="11115555-2222-3333-aabb-cccdddfff666"/>
+            <column name="updated_at" value="2022-06-14 8:45:00"/>
+            <column name="currency_code" value="EUR"/>
+            <column name="iso_code" value="978"/>
+            <column name="name" value="Euro"/>
+            <column name="sign" value="€"/>
+            <column name="unit" value="1"/>
+            <column name="buying_rate" value="0.85"/>
+            <column name="selling_rate" value="0.87"/>
+            <column name="is_cross" value="false"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert test data into exchange_rates table 4" author="y.valadzko">
+        <insert tableName="exchange_rates">
+            <column name="id" value="22225555-2222-3333-aabb-cccdddfff666"/>
+            <column name="updated_at" value="2022-06-14 9:08:00"/>
+            <column name="currency_code" value="GBP"/>
+            <column name="iso_code" value="826"/>
+            <column name="name" value="Pound_Sterling"/>
+            <column name="sign" value="£"/>
+            <column name="unit" value="1"/>
+            <column name="buying_rate" value="1"/>
+            <column name="selling_rate" value="1"/>
+            <column name="is_cross" value="false"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert test data into exchange_rates table 5" author="y.valadzko">
+        <insert tableName="exchange_rates">
+            <column name="id" value="22227777-2222-3333-aabb-cccdddfff666"/>
+            <column name="updated_at" value="2022-06-14 9:09:50"/>
+            <column name="currency_code" value="CHF"/>
+            <column name="iso_code" value="756"/>
+            <column name="name" value="Swiss_Franc"/>
+            <column name="sign" value="₣"/>
+            <column name="unit" value="1"/>
+            <column name="buying_rate" value="0.82"/>
+            <column name="selling_rate" value="0.84"/>
+            <column name="is_cross" value="false"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

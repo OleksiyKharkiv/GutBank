@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="drop table bank_branches" author="y.valadzko">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="bank_branches"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="bank_branches"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="drop table exchange_rates" author="y.valadzko">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="exchange_rates"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="exchange_rates"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="drop table error_messages" author="y.valadzko">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="error_messages"/>
+        </preConditions>
+        <rollback>
+            <dropTable tableName="error_messages"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

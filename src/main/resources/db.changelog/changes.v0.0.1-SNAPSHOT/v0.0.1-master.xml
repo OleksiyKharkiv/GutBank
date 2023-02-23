@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-create-tables-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-drop-tables-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-insert-into-bank-branches-table-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-insert-into-exchange-rates-table-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-insert-into-error-messages-table-changelog.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-366-create-sequence.xml"/>
+    <include file="db/changelog/changes/v0.0.1-SNAPSHOT/RTN-424-create-catalog-for-currency.xml"/>
+</databaseChangeLog>

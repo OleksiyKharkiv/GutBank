@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Objects;
+
 @Getter
 @Setter
 @Entity
@@ -18,11 +20,11 @@ import java.sql.Timestamp;
 public class Manager {
     /**
      * id INT NOT NULL ID_SEQ.NEXTVAL,
-     * 	first_name varchar(50) NOT NULL,
-     * 	last_name varchar(50) NOT NULL,
-     * 	status INT(1) NOT NULL,
-     * 	created_at TIMESTAMP NOT NULL,
-     * 	updated_at TIMESTAMP NOT NULL,
+     * first_name varchar(50) NOT NULL,
+     * last_name varchar(50) NOT NULL,
+     * status INT(1) NOT NULL,
+     * created_at TIMESTAMP NOT NULL,
+     * updated_at TIMESTAMP NOT NULL,
      */
     @Id
     @Column(name = "id")
@@ -40,4 +42,20 @@ public class Manager {
     @Column(name = "update_at")
     private Timestamp updatedAt;
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, createdAt);
+    }
+
+    @Override
+    public String toString() {
+        return "Manager{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", status=" + status +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

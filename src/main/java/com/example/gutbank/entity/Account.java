@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -44,10 +45,10 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
     @Column(name = "balance")
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private float balance;
     @Column(name = "currency_code")
-    private Currencies currencyCode;
+    private Currencies currency;
     @Column(name = "created_at")
     private Timestamp createdAt;
     @Column(name = "updated_at")
@@ -58,7 +59,37 @@ public class Account {
     private Client client;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "debitAccountId")
-    private Set<Transaction> debitTransaction;
+    private Set<Transaction> debitTransactions;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "creditAccountId")
-    private Set<Transaction> creditTransaction;
+    private Set<Transaction> creditTransactions;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Account account = (Account) o;
+        return Objects.equals(id, account.id) && currency == account.currency && Objects.equals(client, account.client);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, currency, client);
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", status=" + status +
+                ", balance=" + balance +
+                ", currency=" + currency +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", client=" + client +
+                ", debitTransactions=" + debitTransactions +
+                ", creditTransactions=" + creditTransactions +
+                '}';
+    }
 }
