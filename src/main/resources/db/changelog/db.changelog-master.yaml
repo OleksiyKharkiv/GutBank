@@ -1,0 +1,49 @@
+databaseChangeLog:
+    - logicalFilePath: db/changelog/db.changelog-master.yaml
+    - changeSet:
+        id: 1
+        author: gut_bank_username
+        changes:
+          - createTable:
+              tableName: account
+              columns:
+                - column:
+                    name: id
+                    type: varchar(40)
+#                    autoIncrement: true
+#                    constraints:
+#                      primaryKey: true
+#                      nullable: false
+                - column:
+                    name: client_id
+                    type: varchar(255)
+#                    autoIncrement: true
+#                    constraints:
+#                      foreignKey: true
+#                      nullable: false
+                - column:
+                    name: name
+                    type: varchar(100)
+#                    constraints:
+#                      unique: true
+#                      nullable: false
+                - column:
+                    name: type
+                    type: integer(1)
+                    constraints:
+                      nullable: false
+                - column:
+                    name: status
+                    type: integer(1)
+                - column:
+                    name: balance
+                    type: decimal(15,2)
+                - column:
+                    name: currency_code
+                    type: integer(2)
+                - column:
+                    name: created_at
+                    type: timestamp
+                - column:
+                    name: updated_at
+                    type: timestamp

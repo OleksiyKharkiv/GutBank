@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.Set;
@@ -45,8 +46,7 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountStatus status;
     @Column(name = "balance")
-    @Enumerated(EnumType.STRING)
-    private float balance;
+    private BigDecimal balance;
     @Column(name = "currency_code")
     private Currencies currency;
     @Column(name = "created_at")

@@ -1,5 +1,6 @@
 package com.example.gutbank.entity;
 
+import com.example.gutbank.entity.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -41,7 +42,7 @@ public class Transaction {
     private Account creditAccountId;
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
-    private int type;
+    private TransactionType type;
     @Column(name = "amount")
     private BigDecimal amount;
     @Column(name = "description")
