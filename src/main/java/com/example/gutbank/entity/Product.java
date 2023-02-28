@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Objects;
@@ -47,7 +48,7 @@ public class Product {
     @Enumerated(EnumType.ORDINAL)
     private Currencies currency;
     @Column(name = "interest_rate")
-    private int interestRate;
+    private BigDecimal interestRate;
     @Column(name = "limit")
     private int limit;
     @Column(name = "created_at")
