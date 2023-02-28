@@ -29,7 +29,7 @@ public class Agreement {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
@@ -40,7 +40,7 @@ public class Agreement {
     @Column(name = "interest_rate")
     private BigDecimal interestRate;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private AccountProductStatus status;
     @Column(name = "sum")
     private BigDecimal sum;

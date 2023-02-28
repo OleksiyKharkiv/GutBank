@@ -36,14 +36,15 @@ public class Account {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
+
     @Column(name = "name")
     private String name;
     @Column(name = "type")
     private AccountType type;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private AccountStatus status;
     @Column(name = "balance")
     private BigDecimal balance;

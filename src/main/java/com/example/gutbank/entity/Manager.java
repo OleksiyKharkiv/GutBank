@@ -28,18 +28,18 @@ public class Manager {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private ManagerStatus status;
     @Column(name = "created_at")
     private Timestamp createdAt;
-    @Column(name = "update_at")
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @Override

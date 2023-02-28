@@ -40,7 +40,6 @@ logging:
         security: DEBUG
 
 app:
-
   server:
     url: ${app.server.url}
 

@@ -105,8 +105,8 @@ databaseChangeLog:
                 - column:
                     name: type
                     type: integer(1)
-                    constraints:
-                      nullable: false
+#                    constraints:
+#                      nullable: false
                 - column:
                     name: status
                     type: varchar(255)
@@ -122,6 +122,7 @@ databaseChangeLog:
                 - column:
                     name: updated_at
                     type: timestamp
+
           - createTable:
               tableName: product
               columns:

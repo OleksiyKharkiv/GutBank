@@ -32,7 +32,7 @@ public class Transaction {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @ManyToOne()
     @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
@@ -40,7 +40,7 @@ public class Transaction {
     @ManyToOne()
     @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
     private Account creditAccountId;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "type")
     private TransactionType type;
     @Column(name = "amount")

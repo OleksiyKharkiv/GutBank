@@ -35,13 +35,13 @@ public class Client {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @ManyToOne()
     @JoinColumn(name = "manager_id", referencedColumnName = "id")
     private Manager manager;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private ClientStatus status;
     @Column(name = "tax_code")
     private String taxCode;
@@ -53,9 +53,9 @@ public class Client {
     private String email;
     @Column(name = "address")
     private String address;
-    @Column(name = "ph[ne")
+    @Column(name = "phone")
     private String phone;
-    @Column(name = "creates_at")
+    @Column(name = "created_at")
     private Timestamp createdAt;
     @Column(name = "updated_at")
     private Timestamp updatedAt;

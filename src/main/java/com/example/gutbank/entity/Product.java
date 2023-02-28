@@ -33,7 +33,7 @@ public class Product {
      */
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name = "manager_id", referencedColumnName = "id")
@@ -41,10 +41,10 @@ public class Product {
     @Column(name = "name")
     private String name;
     @Column(name = "status")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private ProductStatus status;
     @Column(name = "currency_code")
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     private Currencies currency;
     @Column(name = "interest_rate")
     private int interestRate;
