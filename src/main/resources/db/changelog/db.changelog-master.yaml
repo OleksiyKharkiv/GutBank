@@ -250,3 +250,22 @@ databaseChangeLog:
                 - column:
                     name: updated_at
                     type: timestamp
+    - changeSet:
+        id: 2
+        author: gut_bank_username
+        changes:
+          - insert:
+              tableName: manager
+              columns:
+                - column:
+                    name: id
+                    value: 1
+                - column:
+                    name: first_name
+                    value: Tom
+                - column:
+                    name: last_name
+                    value: Kruz
+                - column:
+                    name: status
+                    value: 1
