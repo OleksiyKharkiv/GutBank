@@ -11,5 +11,5 @@ import java.util.List;
 public interface AccountRepository extends CrudRepository<Account, Integer> {
     List<Account> findById(String id);
 
-    Account findByIdAndName(String id, String name);
+    Account findAllByName(String name);
 }
