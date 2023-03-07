@@ -20,10 +20,6 @@ spring:
     hibernate:
       ddl-auto: validate
 
-#  liquibase:
-#    change-log: classpath:/db/changelog/db.changelog-master.yaml
-
-
 logging:
   level:
     root: INFO

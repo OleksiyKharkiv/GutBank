@@ -9,5 +9,4 @@ public class GutBankApplication {
     public static void main(String[] args) {
         SpringApplication.run(GutBankApplication.class, args);
     }
-
 }
