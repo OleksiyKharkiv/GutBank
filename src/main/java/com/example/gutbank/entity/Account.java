@@ -33,7 +33,6 @@ public class Account {
      * `created_at` TIMESTAMP NOT NULL,
      * `updated_at` TIMESTAMP NOT NULL,
      */
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

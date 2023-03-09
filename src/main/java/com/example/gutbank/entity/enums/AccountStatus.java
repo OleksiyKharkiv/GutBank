@@ -14,5 +14,4 @@ public enum AccountStatus {
     public int getValue() {
         return value;
     }
-
 }

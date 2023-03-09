@@ -1,7 +1,5 @@
 package com.example.gutbank.entity.enums;
 
-import java.awt.*;
-
 public enum AccountProductStatus {
     ACTIVE(1),
     PENDING(2),
@@ -16,5 +14,4 @@ public enum AccountProductStatus {
     public int getValue() {
         return value;
     }
-
 }

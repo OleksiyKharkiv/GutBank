@@ -7,9 +7,9 @@ spring:
     banner-mode: off
 
   datasource:
-    url: jdbc:mysql://localhost:3306/gut_bank
-    username: root
-    password: Igibu777
+    url: ${datasource.url}
+    username: ${datasource.username}
+    password: ${datasource.password}
 
   jpa:
     properties:
@@ -19,10 +19,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: validate
-
-#  liquibase:
-#    change-log: classpath:/db/changelog/db.changelog-master.yaml
-
 
 logging:
   level:
@@ -34,6 +30,3 @@ logging:
 app:
   server:
     url: ${app.server.url}
-
-
-
