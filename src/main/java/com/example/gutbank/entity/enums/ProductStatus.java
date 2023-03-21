@@ -5,7 +5,10 @@ public enum ProductStatus {
     PENDING(2),
     REMOVED(3);
     private int value;
-    private ProductStatus(int value){ this.value = value;}
+
+    ProductStatus(int value) {
+        this.value = value;
+    }
 
     public int getValue() {
         return value;
