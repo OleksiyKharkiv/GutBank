@@ -1,10 +1,10 @@
 package com.example.gutbank.entity.enums;
 
 public enum Currencies {
-    EUR(1),
-    USD(2),
-    UAH(3),
-    RUR(4);
+    EUR(0),
+    USD(1),
+    UAH(2),
+    RUR(3);
     private int value;
 
     Currencies(int value) {

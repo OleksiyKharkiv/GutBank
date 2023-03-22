@@ -320,10 +320,10 @@ databaseChangeLog:
                   value: Debit_card
               - column:
                   name: status
-                  value: 1
+                  value: 0
               - column:
                   name: currency_code
-                  value: 1
+                  value: 0
               - column:
                   name: interest_rate
                   value: 8
@@ -357,7 +357,7 @@ databaseChangeLog:
                   value: 1
               - column:
                   name: currency_code
-                  value: 1
+                  value: 0
               - column:
                   name: interest_rate
                   value: 12

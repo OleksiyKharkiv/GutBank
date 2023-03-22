@@ -1,9 +1,9 @@
 package com.example.gutbank.entity.enums;
 
 public enum ManagerStatus {
-    ACTIVE(1),
-    PENDING(2),
-    REMOVED(3);
+    ACTIVE(0),
+    PENDING(1),
+    REMOVED(2);
     private int value;
 
     ManagerStatus(int value) {
