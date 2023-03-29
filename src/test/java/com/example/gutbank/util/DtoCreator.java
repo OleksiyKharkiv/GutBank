@@ -22,7 +22,7 @@ public class DtoCreator {
                 );
     }
 
-    public static ProductDto findAllChangedProducts() {
+    public static ProductDto getProductDto() {
         return new ProductDto(
                 "1",
                 "Debit",
