@@ -1,5 +1,6 @@
 package com.example.gutbank.dto;
 
+import com.example.gutbank.entity.Manager;
 import com.example.gutbank.entity.enums.Currencies;
 import com.example.gutbank.entity.enums.ProductStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -19,5 +20,5 @@ public class ProductDto {
     Timestamp createdAt;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
     Timestamp updatedAt;
-    ManagerDto manager;
+    Manager manager;
 }
