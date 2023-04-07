@@ -36,7 +36,7 @@ public class Account {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private String id; // Will be UUID
 
     @Column(name = "name")
     private String name;
@@ -64,7 +64,7 @@ public class Account {
     private Set<Transaction> creditTransactions;
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) { // matching unique fields
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
@@ -72,7 +72,7 @@ public class Account {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode() { // firstly matching unique fields
         return Objects.hash(id, currency, client);
     }
 
