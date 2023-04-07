@@ -9,8 +9,12 @@ import java.util.Optional;
 public interface ProductService {
 
     List<ProductDto> getFindAllChangedProducts();
-    List<Product>findAll();
-    Optional<Product>findById(int Id);
+
+    List<Product> findAll();
+
+    Optional<Product> findById(int Id);
+
     Product save(Product product);
+
     void deleteById(int Id);
 }
