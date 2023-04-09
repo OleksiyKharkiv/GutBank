@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.Matchers.hasSize;
@@ -33,22 +32,17 @@ public class ProductControllerTest {
 
     @Test
     void productDtoList() throws Exception {
-        final List<ProductDto> productDtoList = new ArrayList<>();
-        final ProductDto productDto = DtoCreator.getProductDto();
-        productDtoList.add(productDto);
-
+        final List<ProductDto> productDtoList = DtoCreator.getProductDtoList();
         when(productService.getFindAllChangedProducts()).thenReturn(productDtoList);
-
         mockMvc.perform(MockMvcRequestBuilders.get("/product/all-changed"))
                 .andExpect(status().isOk())
                 .andDo(print())
-                .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(1)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id", is(productDto.getId())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name", is(productDto.getName())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].status", is(productDto.getStatus().toString())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].currency", is(productDto.getCurrency().toString())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].interestRate").value(productDto.getInterestRate()))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].limit").value(productDto.getLimit()))
-         ;
+                .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(2)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id", is(productDtoList.get(0).getId())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].name", is(productDtoList.get(0).getName())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].status", is(productDtoList.get(0).getStatus().toString())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].currency", is(productDtoList.get(0).getCurrency().toString())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].interestRate").value(productDtoList.get(0).getInterestRate()))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].limit").value(productDtoList.get(0).getLimit()));
     }
 }

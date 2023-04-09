@@ -6,6 +6,8 @@ import com.example.gutbank.util.EntityCreator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,13 +18,13 @@ public class ProductMapperTest {
     @Test
     @DisplayName("When we have correct entity then return correct ProductDto")
     void testProductToProductDto() {
-        Product product = EntityCreator.getProduct();
-        ProductDto productDto = productMapper.toDto(product);
+        List<Product> product = EntityCreator.getProductList();
+        ProductDto productDto = productMapper.toDto(product.get(0));
         assertAll(
-                () -> assertEquals(String.valueOf(product.getId()), productDto.getId()),
-                () -> assertEquals(product.getName(), productDto.getName()),
-                () -> assertEquals(product.getStatus(), productDto.getStatus()),
-                () -> assertEquals(product.getCurrency(), productDto.getCurrency())
+                () -> assertEquals(String.valueOf(product.get(0).getId()), productDto.getId()),
+                () -> assertEquals(product.get(0).getName(), productDto.getName()),
+                () -> assertEquals(product.get(0).getStatus(), productDto.getStatus()),
+                () -> assertEquals(product.get(0).getCurrency(), productDto.getCurrency())
         );
     }
 }

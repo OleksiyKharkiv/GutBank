@@ -8,6 +8,7 @@ import com.example.gutbank.entity.Product;
 import com.example.gutbank.entity.enums.Currencies;
 import com.example.gutbank.entity.enums.ProductStatus;
 import com.example.gutbank.service.impl.ProductServiceImpl;
+import com.example.gutbank.util.EntityCreator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -40,11 +41,7 @@ class ProductServiceImplTest {
     @Test
     void getFindAllChangedProducts() {
         // create some sample products
-        Product product1 = new Product(1, null, "Product 1", ProductStatus.ACTIVE, Currencies.USD, BigDecimal.valueOf(2.5), 1000, Timestamp.valueOf(LocalDateTime.now().minusHours(1)), Timestamp.valueOf(LocalDateTime.now()));
-        Product product2 = new Product(2, null, "Product 2", ProductStatus.ACTIVE, Currencies.EUR, BigDecimal.valueOf(3.5), 5000, Timestamp.valueOf(LocalDateTime.now().minusDays(1)), Timestamp.valueOf(LocalDateTime.now()));
-        List<Product> productList = new ArrayList<>();
-        productList.add(product1);
-        productList.add(product2);
+        List<Product> productList = EntityCreator.getProductList();
 
         // mock the repository method to return the sample products
         when(productRepository.findAllChangedProducts()).thenReturn(productList);

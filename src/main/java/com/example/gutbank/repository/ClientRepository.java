@@ -10,5 +10,4 @@ import java.util.List;
 public interface ClientRepository extends PagingAndSortingRepository<Client, Long>, JpaRepository<Client, Long> {
 
     List<Client> findByLastName(@Param("last_name") String lastName);
-
 }

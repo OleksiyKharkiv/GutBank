@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Value;
 
 import java.sql.Timestamp;
+
 @Value
 public class ManagerDto {
     String id;
