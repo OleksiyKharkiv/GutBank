@@ -1,12 +1,12 @@
 package com.example.gutbank.entity.enums;
 
 public enum AccountType {
-    CREDIT(1),
-    DEPOSIT(2),
-    UNIT(3);
+    CREDIT(0),
+    DEPOSIT(1),
+    UNIT(2);
     private int value;
 
-    private AccountType(int value) {
+    AccountType(int value) {
         this.value = value;
     }
 
