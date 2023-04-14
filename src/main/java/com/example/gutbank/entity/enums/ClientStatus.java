@@ -1,13 +1,13 @@
 package com.example.gutbank.entity.enums;
 
 public enum ClientStatus {
-    ACTIVE(1),
-    PENDING(2),
-    REMOVE(3),
-    BLOCKING(4);
+    ACTIVE(0),
+    PENDING(1),
+    REMOVE(2),
+    BLOCKING(3);
     private int value;
 
-    private ClientStatus(int value) {
+    ClientStatus(int value) {
         this.value = value;
     }
 

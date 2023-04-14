@@ -1,271 +1,372 @@
 databaseChangeLog:
-    - logicalFilePath: db/changelog/db.changelog-master.yaml
-    - changeSet:
-        id: 1
-        author: gut_bank_username
-        changes:
-          - createTable:
-              tableName: manager
-              columns:
-                - column:
-                    name: id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      primaryKey: true
-                #                      nullable: false
-                - column:
-                    name: first_name
-                    type: varchar(50)
-                - column:
-                    name: last_name
-                    type: varchar(50)
-                - column:
-                    name: status
-                    type: integer
-                - column:
-                    name: created_at
-                    type: timestamp
-                - column:
-                    name: updated_at
-                    type: timestamp
-          - createTable:
-              tableName: client
-              columns:
-                - column:
-                    name: id
-                    type: varchar(40)
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      primaryKey: true
-                #                      nullable: false
-                - column:
-                    name: manager_id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: name
-                    type: varchar(100)
-                - column:
-                    name: type
-                    type: integer(1)
-                    constraints:
-                      nullable: false
-                - column:
-                    name: status
-                    type: integer
-                - column:
-                    name: tax_code
-                    type: varchar(20)
-                - column:
-                    name: first_name
-                    type: varchar(50)
-                - column:
-                    name: last_name
-                    type: varchar(50)
-                - column:
-                    name: email
-                    type: varchar(60)
-                - column:
-                    name: address
-                    type: varchar(80)
-                - column:
-                    name: phone
-                    type: varchar(20)
-                - column:
-                    name: created_at
-                    type: timestamp
-                - column:
-                    name: updated_at
-                    type: timestamp
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: gut_bank_username
+      changes:
+        - createTable:
+            tableName: manager
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+              - column:
+                  name: last_name
+                  type: varchar(50)
+              - column:
+                  name: status
+                  type: integer
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: manager_id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: type
+                  type: integer(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: integer
+              - column:
+                  name: tax_code
+                  type: varchar(20)
+              - column:
+                  name: first_name
+                  type: varchar(50)
+              - column:
+                  name: last_name
+                  type: varchar(50)
+              - column:
+                  name: email
+                  type: varchar(60)
+              - column:
+                  name: address
+                  type: varchar(80)
+              - column:
+                  name: phone
+                  type: varchar(20)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
 
-          - createTable:
-              tableName: account
-              columns:
-                - column:
-                    name: id
-                    type: varchar(40)
-#                    autoIncrement: true
-#                    constraints:
-#                      primaryKey: true
-#                      nullable: false
-                - column:
-                    name: client_id
-                    type: varchar(255)
-#                    autoIncrement: true
-#                    constraints:
-#                      foreignKey: true
-#                      nullable: false
-                - column:
-                    name: name
-                    type: varchar(100)
-                - column:
-                    name: type
-                    type: integer(1)
-#                    constraints:
-#                      nullable: false
-                - column:
-                    name: status
-                    type: integer
-                - column:
-                    name: balance
-                    type: decimal(15,2)
-                - column:
-                    name: currency_code
-                    type: integer(2)
-                - column:
-                    name: created_at
-                    type: timestamp
-                - column:
-                    name: updated_at
-                    type: timestamp
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: client_id
+                  type: varchar(255)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: name
+                  type: varchar(100)
+              - column:
+                  name: type
+                  type: integer(1)
+              #                    constraints:
+              #                      nullable: false
+              - column:
+                  name: status
+                  type: integer
+              - column:
+                  name: balance
+                  type: decimal(15,2)
+              - column:
+                  name: currency_code
+                  type: integer(2)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
 
-          - createTable:
-              tableName: product
-              columns:
-                - column:
-                    name: id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      primaryKey: true
-                #                      nullable: false
-                - column:
-                    name: manager_id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: name
-                    type: varchar(70)
-                - column:
-                    name: type
-                    type: integer(1)
-                    constraints:
-                      nullable: false
-                - column:
-                    name: status
-                    type: integer
-                - column:
-                    name: currency_code
-                    type: integer(2)
-                - column:
-                    name: interest_rate
-                    type: decimal(6,4)
-                - column:
-                    name: limit
-                    type: integer
-                - column:
-                    name: created_at
-                    type: timestamp
-                - column:
-                    name: updated_at
-                    type: timestamp
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: manager_id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: name
+                  type: varchar(70)
+              - column:
+                  name: status
+                  type: integer
+              - column:
+                  name: currency_code
+                  type: integer(2)
+              - column:
+                  name: interest_rate
+                  type: decimal(6,4)
+              - column:
+                  name: limit
+                  type: integer
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
 
-          - createTable:
-              tableName: transaction
-              columns:
-                - column:
-                    name: id
-                    type: varchar(40)
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      primaryKey: true
-                #                      nullable: false
-                - column:
-                    name: debit_account_id
-                    type: varchar(40)
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: credit_account_id
-                    type: varchar(40)
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: type
-                    type: integer(1)
-                    constraints:
-                      nullable: false
-                - column:
-                    name: amount
-                    type: decimal(12,4)
-                - column:
-                    name: currency_code
-                    type: integer(2)
-                - column:
-                    name: description
-                    type: varchar(255)
-                - column:
-                    name: created_at
-                    type: timestamp
+        - createTable:
+            tableName: transaction
+            columns:
+              - column:
+                  name: id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: debit_account_id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: credit_account_id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: type
+                  type: integer(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal(12,4)
+              - column:
+                  name: currency_code
+                  type: integer(2)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: created_at
+                  type: timestamp
 
-          - createTable:
-              tableName: agreement
-              columns:
-                - column:
-                    name: id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      primaryKey: true
-                #                      nullable: false
-                - column:
-                    name: account_id
-                    type: varchar(40)
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: product_id
-                    type: integer
-                #                    autoIncrement: true
-                #                    constraints:
-                #                      foreignKey: true
-                #                      nullable: false
-                - column:
-                    name: interest_rate
-                    type: decimal(6,4)
-                    constraints:
-                      nullable: false
-                - column:
-                    name: status
-                    type: integer(1)
-                - column:
-                    name: sum
-                    type: decimal(15,2)
-                - column:
-                    name: created_at
-                    type: timestamp
-                - column:
-                    name: updated_at
-                    type: timestamp
-    - changeSet:
-        id: 2
-        author: gut_bank_username
-        changes:
-          - insert:
-              tableName: manager
-              columns:
-                - column:
-                    name: id
-                    value: 1
-                - column:
-                    name: first_name
-                    value: Tom
-                - column:
-                    name: last_name
-                    value: Kruz
-                - column:
-                    name: status
-                    value: 1
+        - createTable:
+            tableName: agreement
+            columns:
+              - column:
+                  name: id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      primaryKey: true
+              #                      nullable: false
+              - column:
+                  name: account_id
+                  type: varchar(40)
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: product_id
+                  type: integer
+              #                    autoIncrement: true
+              #                    constraints:
+              #                      foreignKey: true
+              #                      nullable: false
+              - column:
+                  name: interest_rate
+                  type: decimal(6,4)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: integer(1)
+              - column:
+                  name: sum
+                  type: decimal(15,2)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+  - changeSet:
+      id: 2
+      author: gut_bank_username
+      changes:
+        - insert:
+            tableName: manager
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: first_name
+                  value: Tom
+              - column:
+                  name: last_name
+                  value: Kruz
+              - column:
+                  name: status
+                  value: 1
+  - changeSet:
+      id: 3
+      author: gut_bank_username
+      changes:
+        - insert:
+            tableName: manager
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: first_name
+                  value: Oliver
+              - column:
+                  name: last_name
+                  value: Stone
+              - column:
+                  name: status
+                  value: 1
+  - changeSet:
+      id: 4
+      author: gut_bank_username
+      changes:
+        - insert:
+            tableName: manager
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: first_name
+                  value: Charlie
+              - column:
+                  name: last_name
+                  value: Chaplin
+              - column:
+                  name: status
+                  value: 3
+  - changeSet:
+      id: 5
+      author: gut_bank_username
+      changes:
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: manager_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Debit_card
+              - column:
+                  name: status
+                  value: 0
+              - column:
+                  name: currency_code
+                  value: 0
+              - column:
+                  name: interest_rate
+                  value: 8
+              - column:
+                  name: limit
+                  value: 10000000
+              - column:
+                  name: created_at
+                  value: 2023-03-21*08:10:12
+              - column:
+                  name: updated_at
+                  value: 2023-03-21*08:10:12
+  - changeSet:
+      id: 6
+      author: gut_bank_username
+      changes:
+        - insert:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: manager_id
+                  value: 1
+              - column:
+                  name: name
+                  value: Credit_card
+              - column:
+                  name: status
+                  value: 1
+              - column:
+                  name: currency_code
+                  value: 0
+              - column:
+                  name: interest_rate
+                  value: 12
+              - column:
+                  name: limit
+                  value: 100000
+              - column:
+                  name: created_at
+                  value: 2023-03-21*08:20:25
+              - column:
+                  name: updated_at
+                  value: 2023-03-21*08:30:45
