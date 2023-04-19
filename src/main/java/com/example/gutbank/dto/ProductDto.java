@@ -6,6 +6,7 @@ import com.example.gutbank.entity.enums.ProductStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Value;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import io.swagger.annotations.ApiModel;
@@ -23,7 +24,8 @@ public class ProductDto {
     @ApiModelProperty(notes = "Currency code of the product")
     Currencies currency;
     @ApiModelProperty(notes = "Interest rate of the product")
-    String interestRate;
+//    @DecimalMin(value = "0.01", message = "Interest rate should not be less than 0.01")
+    BigDecimal interestRate;
     @ApiModelProperty(notes = "Limit of the product")
     String limit;
     @ApiModelProperty(notes = "Timestamp when the product was created")

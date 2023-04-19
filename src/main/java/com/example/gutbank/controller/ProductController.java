@@ -37,7 +37,7 @@ public class ProductController {
         if (productOptional.isPresent()) {
             Product product = productOptional.get();
             return new ProductDto(String.valueOf(product.getId()), product.getName(), product.getStatus(), product.getCurrency(),
-                    String.valueOf(product.getInterestRate()), String.valueOf(product.getLimit()), product.getCreatedAt(),
+                    product.getInterestRate(), String.valueOf(product.getLimit()), product.getCreatedAt(),
                     product.getUpdatedAt(), product.getManager());
         } else {
             throw new ProductNotFoundException("Product not found with id " + id);
