@@ -44,7 +44,7 @@ public class ProductController {
         }
     }
 
-    @GetMapping
+    @GetMapping()
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Get all products", notes = "Returns a list of all products")
     public List<ProductDto> getAllProducts() {
