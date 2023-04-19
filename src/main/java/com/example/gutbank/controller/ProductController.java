@@ -2,7 +2,7 @@ package com.example.gutbank.controller;
 
 import com.example.gutbank.dto.ProductDto;
 import com.example.gutbank.entity.Product;
-import com.example.gutbank.exeption.ProductNotFoundExeption;
+import com.example.gutbank.exception.ProductNotFoundException;
 import com.example.gutbank.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -35,7 +35,7 @@ public class ProductController {
                     String.valueOf(product.getInterestRate()), String.valueOf(product.getLimit()), product.getCreatedAt(),
                     product.getUpdatedAt(), product.getManager());
         } else {
-            throw new ProductNotFoundExeption("Product not found with id " + id);
+            throw new ProductNotFoundException("Product not found with id " + id);
         }
     }
 

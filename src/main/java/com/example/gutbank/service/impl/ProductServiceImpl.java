@@ -2,6 +2,7 @@ package com.example.gutbank.service.impl;
 
 import com.example.gutbank.dto.ProductDto;
 import com.example.gutbank.entity.Product;
+import com.example.gutbank.exception.ProductNotFoundException;
 import com.example.gutbank.mapper.ProductMapper;
 import com.example.gutbank.repository.ProductRepository;
 import com.example.gutbank.service.ProductService;
@@ -21,8 +22,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getFindAllChangedProducts() {
+        List<Product> products = productRepository.findAllChangedProducts();
+        if (products == null || products.isEmpty()) {
+            throw new ProductNotFoundException("No products found.");
+        }
         return productMapper.toDtoList(productRepository.findAllChangedProducts());
     }
+
     public List<Product> findAll() {
         return (List<Product>) productRepository.findAll();
     }
