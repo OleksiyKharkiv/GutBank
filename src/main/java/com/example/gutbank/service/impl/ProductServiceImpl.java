@@ -29,18 +29,22 @@ public class ProductServiceImpl implements ProductService {
         return productMapper.toDtoList(productRepository.findAllChangedProducts());
     }
 
-    public List<Product> findAll() {
-        return (List<Product>) productRepository.findAll();
+    @Override
+    public List<ProductDto> findAll() {
+        return productMapper.toDtoList((List<Product>) productRepository.findAll());
     }
 
+    @Override
     public Optional<Product> findById(int id) {
         return productRepository.findById(id);
     }
 
+    @Override
     public Product save(Product product) {
         return productRepository.save(product);
     }
 
+    @Override
     public void deleteById(int id) {
         productRepository.deleteById(id);
     }

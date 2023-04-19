@@ -1,5 +1,6 @@
 package com.example.gutbank.repository;
 
+import com.example.gutbank.dto.ProductDto;
 import com.example.gutbank.entity.Product;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
