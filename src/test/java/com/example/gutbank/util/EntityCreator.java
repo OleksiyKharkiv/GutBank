@@ -1,7 +1,9 @@
 package com.example.gutbank.util;
 
+import com.example.gutbank.entity.Manager;
 import com.example.gutbank.entity.Product;
 import com.example.gutbank.entity.enums.Currencies;
+import com.example.gutbank.entity.enums.ManagerStatus;
 import com.example.gutbank.entity.enums.ProductStatus;
 
 import java.math.BigDecimal;
@@ -20,7 +22,8 @@ public class EntityCreator {
         product1.setLimit(1000000);
         product1.setCreatedAt(new Timestamp(System.currentTimeMillis()));
         product1.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
-        product1.setManager(null);
+        product1.setManager(new Manager(1, "Petro", "Petrov", ManagerStatus.ACTIVE,
+                new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis())));
         Product product2 = new Product();
         product2.setId(2);
         product2.setName("Credit");
@@ -30,7 +33,8 @@ public class EntityCreator {
         product2.setLimit(100000);
         product2.setCreatedAt(new Timestamp(System.currentTimeMillis()));
         product2.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
-        product2.setManager(null);
+        product2.setManager(new Manager(2, "Ivan", "Ivanov", ManagerStatus.ACTIVE,
+                new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis())));
         List<Product> productList = new ArrayList<>();
         productList.add(product1);
         productList.add(product2);

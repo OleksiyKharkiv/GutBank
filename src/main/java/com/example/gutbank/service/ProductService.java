@@ -10,11 +10,11 @@ public interface ProductService {
 
     List<ProductDto> getFindAllChangedProducts();
 
-    List<Product> findAll();
+    List<ProductDto> findAll();
 
-    Optional<Product> findById(int Id);
+    ProductDto findById(int Id);
 
     Product save(Product product);
 
     void deleteById(int Id);
-}
+    }

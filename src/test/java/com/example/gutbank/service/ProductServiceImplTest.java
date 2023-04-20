@@ -47,8 +47,8 @@ class ProductServiceImplTest {
         when(productRepository.findAllChangedProducts()).thenReturn(productList);
 
         // mock the mapper method to return the DTOs for the sample products
-        ProductDto productDto1 = new ProductDto("1", "Product 1", ProductStatus.ACTIVE, Currencies.USD, "2.5", "1000", Timestamp.valueOf(LocalDateTime.now().minusHours(1)), Timestamp.valueOf(LocalDateTime.now()), null);
-        ProductDto productDto2 = new ProductDto("2", "Product 2", ProductStatus.ACTIVE, Currencies.EUR, "3.5", "5000", Timestamp.valueOf(LocalDateTime.now().minusDays(1)), Timestamp.valueOf(LocalDateTime.now()), null);
+        ProductDto productDto1 = new ProductDto("1", "Product 1", ProductStatus.ACTIVE, Currencies.USD, BigDecimal.valueOf(2.5), "1000", Timestamp.valueOf(LocalDateTime.now().minusHours(1)), Timestamp.valueOf(LocalDateTime.now()), null);
+        ProductDto productDto2 = new ProductDto("2", "Product 2", ProductStatus.ACTIVE, Currencies.EUR, BigDecimal.valueOf(3.5), "5000", Timestamp.valueOf(LocalDateTime.now().minusDays(1)), Timestamp.valueOf(LocalDateTime.now()), null);
         List<ProductDto> productDtoList = new ArrayList<>();
         productDtoList.add(productDto1);
         productDtoList.add(productDto2);

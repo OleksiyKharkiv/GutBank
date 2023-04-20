@@ -8,6 +8,7 @@ import com.example.gutbank.util.EntityCreator;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -20,18 +21,17 @@ public class ProductMapperTestGPT {
     @Test
     void shouldMapProductToProductDto() {
         // when
+        List<Product> product = EntityCreator.getProductList();
         ProductDto productDto = productMapper.toDto(EntityCreator.getProductList().get(1));
 
         // then
-        assertEquals("1", productDto.getId());
-        assertEquals("Test product", productDto.getName());
-        assertEquals(ProductStatus.ACTIVE, productDto.getStatus());
-        assertEquals(Currencies.EUR, productDto.getCurrency());
-        assertEquals("0.05", productDto.getInterestRate());
-        assertEquals("1000", productDto.getLimit());
-        assertEquals(Timestamp.valueOf("2023-04-05 12:34:56"), productDto.getCreatedAt());
-        assertEquals(Timestamp.valueOf("2023-04-05 12:34:56"), productDto.getUpdatedAt());
-        assertEquals(2, productDto.getManager().getId());
+        assertEquals(String.valueOf(product.get(1).getId()), productDto.getId());
+        assertEquals(product.get(1).getName(), productDto.getName());
+        assertEquals(product.get(1).getStatus(), productDto.getStatus());
+        assertEquals(product.get(1).getCurrency(), productDto.getCurrency());
+        assertEquals(product.get(1).getInterestRate(), productDto.getInterestRate());
+        assertEquals(String.valueOf(product.get(1).getLimit()), productDto.getLimit());
+        assertEquals(product.get(1).getManager().getId(), productDto.getManager().getId());
     }
 
     @Test

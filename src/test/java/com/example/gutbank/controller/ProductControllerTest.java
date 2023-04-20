@@ -1,7 +1,7 @@
 package com.example.gutbank.controller;
 
 import com.example.gutbank.dto.ProductDto;
-import com.example.gutbank.service.ProductService;
+import com.example.gutbank.service.impl.ProductServiceImpl;
 import com.example.gutbank.util.DtoCreator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,15 +26,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @DisplayName("Test class for ProductController")
 public class ProductControllerTest {
     @MockBean
-    private ProductService productService;
+    private ProductServiceImpl productServiceImpl;
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     void productDtoList() throws Exception {
         final List<ProductDto> productDtoList = DtoCreator.getProductDtoList();
-        when(productService.getFindAllChangedProducts()).thenReturn(productDtoList);
-        mockMvc.perform(MockMvcRequestBuilders.get("/product/all-changed"))
+        when(productServiceImpl.getFindAllChangedProducts()).thenReturn(productDtoList);
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/products/all-changed"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(2)))
