@@ -34,7 +34,7 @@ public class ProductControllerTest {
     void productDtoList() throws Exception {
         final List<ProductDto> productDtoList = DtoCreator.getProductDtoList();
         when(productServiceImpl.getFindAllChangedProducts()).thenReturn(productDtoList);
-        mockMvc.perform(MockMvcRequestBuilders.get("/all-changed"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/products/all-changed"))
                 .andExpect(status().isOk())
                 .andDo(print())
                 .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(2)))

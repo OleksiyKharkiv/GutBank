@@ -23,11 +23,11 @@ public class ProductMapperTestGPT {
         ProductDto productDto = productMapper.toDto(EntityCreator.getProductList().get(1));
 
         // then
-        assertEquals("1", productDto.getId());
-        assertEquals("Test product", productDto.getName());
+        assertEquals("2", productDto.getId());
+        assertEquals("Credit", productDto.getName());
         assertEquals(ProductStatus.ACTIVE, productDto.getStatus());
         assertEquals(Currencies.EUR, productDto.getCurrency());
-        assertEquals("0.05", productDto.getInterestRate());
+        assertEquals(12, productDto.getInterestRate());
         assertEquals("1000", productDto.getLimit());
         assertEquals(Timestamp.valueOf("2023-04-05 12:34:56"), productDto.getCreatedAt());
         assertEquals(Timestamp.valueOf("2023-04-05 12:34:56"), productDto.getUpdatedAt());
