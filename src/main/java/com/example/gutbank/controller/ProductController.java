@@ -33,12 +33,12 @@ public class ProductController {
     @ApiOperation(value = "Get product by ID", notes = "Returns a single product with a given ID")
 
     public ProductDto getProductById(@PathVariable int id) {
-        Optional<Product> productOptional = productService.findById(id);
-        if (productOptional.isPresent()) {
-            Product product = productOptional.get();
-            return new ProductDto(String.valueOf(product.getId()), product.getName(), product.getStatus(), product.getCurrency(),
-                    product.getInterestRate(), String.valueOf(product.getLimit()), product.getCreatedAt(),
-                    product.getUpdatedAt(), product.getManager());
+        ProductDto product = productService.findById(id);
+        if (product != null) {
+            return product;
+//            return new ProductDto(String.valueOf(product.getId()), product.getName(), product.getStatus(), product.getCurrency(),
+//                    product.getInterestRate(), String.valueOf(product.getLimit()), product.getCreatedAt(),
+//                    product.getUpdatedAt(), product.getManager());
         } else {
             throw new ProductNotFoundException("Product not found with id " + id);
         }

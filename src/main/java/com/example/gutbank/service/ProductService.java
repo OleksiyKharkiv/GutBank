@@ -12,7 +12,7 @@ public interface ProductService {
 
     List<ProductDto> findAll();
 
-    Optional<Product> findById(int Id);
+    ProductDto findById(int Id);
 
     Product save(Product product);
 

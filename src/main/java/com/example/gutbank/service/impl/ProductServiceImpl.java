@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.String.valueOf;
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -31,12 +33,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> findAll() {
+
         return productMapper.toDtoList((List<Product>) productRepository.findAll());
     }
 
     @Override
-    public Optional<Product> findById(int id) {
-        return productRepository.findById(id);
+    public ProductDto findById(int id) {
+
+        return productMapper.toDto(productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException(String.valueOf(id))));
     }
 
     @Override
