@@ -48,6 +48,7 @@ public class ProductController {
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation(value = "Get all products", notes = "Returns a list of all products")
     public List<ProductDto> getAllProducts() {
+
         return productService.findAll();
     }
 }
