@@ -4,7 +4,6 @@ import com.example.gutbank.dto.ProductDto;
 import com.example.gutbank.entity.Product;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductService {
 

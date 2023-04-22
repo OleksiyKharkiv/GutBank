@@ -1,6 +1,7 @@
 package com.example.gutbank.controller;
 
 import com.example.gutbank.dto.ManagerDto;
+import com.example.gutbank.exception.ManagerNotFoundException;
 import com.example.gutbank.service.ManagerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,7 +27,7 @@ public class ManagerController {
             return managerDto;
         }
         else {
-            throw new ManagerNotFounDExeption("Manager with ID = " + id + "not found");
+            throw new ManagerNotFoundException("Manager with ID = " + id + "not found");
         }
     }
     @GetMapping()
@@ -35,5 +36,4 @@ public class ManagerController {
     public List<ManagerDto> getAllManagers() {
         return managerService.findAll();
     }
-
 }
