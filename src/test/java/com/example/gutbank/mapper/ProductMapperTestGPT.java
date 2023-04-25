@@ -2,14 +2,10 @@ package com.example.gutbank.mapper;
 
 import com.example.gutbank.dto.ProductDto;
 import com.example.gutbank.entity.Product;
-import com.example.gutbank.entity.enums.Currencies;
-import com.example.gutbank.entity.enums.ProductStatus;
 import com.example.gutbank.util.EntityCreator;
 import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,7 +36,6 @@ public class ProductMapperTestGPT {
 
         List<Product> products = EntityCreator.getProductList();
 
-        // when
         List<ProductDto> productDtoList = productMapper.toDtoList(products);
     }
 }

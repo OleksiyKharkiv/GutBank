@@ -5,7 +5,7 @@ public enum Currencies {
     USD(1),
     UAH(2),
     RUR(3);
-    private int value;
+    private final int value;
 
     Currencies(int value) {
         this.value = value;

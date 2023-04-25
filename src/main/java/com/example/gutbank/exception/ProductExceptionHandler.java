@@ -19,7 +19,7 @@ public class ProductExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
-    public ErrorResponse handleException(Exception ex) {
+    public ErrorResponse handleException() {
         return new ErrorResponse("An internal server error occurred.");
     }
 }

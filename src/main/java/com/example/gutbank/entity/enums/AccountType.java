@@ -4,7 +4,7 @@ public enum AccountType {
     CREDIT(0),
     DEPOSIT(1),
     UNIT(2);
-    private int value;
+    private final int value;
 
     AccountType(int value) {
         this.value = value;

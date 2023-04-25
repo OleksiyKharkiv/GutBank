@@ -8,10 +8,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -36,9 +36,6 @@ public class ProductController {
         ProductDto product = productService.findById(id);
         if (product != null) {
             return product;
-//            return new ProductDto(String.valueOf(product.getId()), product.getName(), product.getStatus(), product.getCurrency(),
-//                    product.getInterestRate(), String.valueOf(product.getLimit()), product.getCreatedAt(),
-//                    product.getUpdatedAt(), product.getManager());
         } else {
             throw new ProductNotFoundException("Product not found with id " + id);
         }
@@ -50,5 +47,20 @@ public class ProductController {
     public List<ProductDto> getAllProducts() {
 
         return productService.findAll();
+    }
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation(value = "Save product", notes = "Save changed product")
+
+    public ResponseEntity<Product> saveProduct(@RequestBody Product product) {
+        Product savedProduct = productService.save(product);
+        return new ResponseEntity<>(savedProduct, HttpStatus.CREATED);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation(value = "Delete product", notes = "Delete product by ID")
+    public ResponseEntity<Void> deleteById(@PathVariable int id) {
+        productService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

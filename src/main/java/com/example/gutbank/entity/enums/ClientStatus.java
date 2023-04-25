@@ -5,7 +5,7 @@ public enum ClientStatus {
     PENDING(1),
     REMOVE(2),
     BLOCKING(3);
-    private int value;
+    private final int value;
 
     ClientStatus(int value) {
         this.value = value;

@@ -4,7 +4,7 @@ public enum TransactionType {
     NEW(0),
     PENDING(1),
     APPROVED(2);
-    private int value;
+    private final int value;
 
     TransactionType(int value) {
         this.value = value;
