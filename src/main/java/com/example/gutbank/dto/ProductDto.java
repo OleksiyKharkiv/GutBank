@@ -24,7 +24,6 @@ public class ProductDto {
     @ApiModelProperty(notes = "Currency code of the product")
     Currencies currency;
     @ApiModelProperty(notes = "Interest rate of the product")
-//    @DecimalMin(value = "0.01", message = "Interest rate should not be less than 0.01")
     BigDecimal interestRate;
     @ApiModelProperty(notes = "Limit of the product")
     String limit;
