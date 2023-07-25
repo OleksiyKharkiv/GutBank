@@ -4,13 +4,12 @@ import com.example.gutbank.entity.Manager;
 import com.example.gutbank.entity.enums.Currencies;
 import com.example.gutbank.entity.enums.ProductStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Value;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(description = "Entity of Product")
 @Value
