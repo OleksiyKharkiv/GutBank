@@ -19,7 +19,7 @@ connected to a MySQL database.
 ### Database Schema
 
 For a visual representation, refer to the database schema diagram:  
-![Database Schema](resources/DB-Scheme.png)
+![Database Schema](src/DB-Scheme.png)
 
 ### Tables Overview
 
