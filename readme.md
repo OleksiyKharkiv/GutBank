@@ -141,7 +141,7 @@ Maven (For dependency management and building the project)
 Step 1: Clone the Repository
 Clone the Git repository to your local machine:
 
-git clone https://github.com/your-repository/gutbank.git
+git clone https://github.com/OleksiyKharkiv/GutBank
 cd gutbank
 Step 2: Configure the Database
 Create a new MySQL database named gutbank (or any name of your choice).
